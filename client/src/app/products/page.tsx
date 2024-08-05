@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { PlusCircleIcon, SearchIcon } from "lucide-react";
 
 import { useCreateProductMutation, useGetProductsQuery } from "@/state/api";
@@ -85,7 +86,15 @@ const Products = () => {
               className="w-full max-w-full mx-auto p-4 border rounded-md shadow"
             >
               <div className="flex flex-col items-center">
-                img
+                <Image
+                  src={`https://s3-inventory-management-app.s3.us-west-1.amazonaws.com/product${
+                    Math.floor(Math.random() * 3) + 1
+                  }.png`}
+                  alt={product.name}
+                  width={150}
+                  height={150}
+                  className="w-36 h-36 mb-3 rounded-2xl"
+                />
                 <h3 className="text-lg font-semibold text-gray-900">
                   {product.name}
                 </h3>

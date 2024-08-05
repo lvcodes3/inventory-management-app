@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ShoppingBag } from "lucide-react";
 
 import { useGetDashboardMetricsQuery } from "@/state/api";
@@ -28,7 +29,17 @@ export const PopularProductsCard = () => {
               >
                 {/* LEFT SIDE */}
                 <div className="flex items-center gap-3">
-                  <div>image</div>
+                  <div>
+                    <Image
+                      src={`https://s3-inventory-management-app.s3.us-west-1.amazonaws.com/product${
+                        Math.floor(Math.random() * 3) + 1
+                      }.png`}
+                      alt={product.name}
+                      width={28}
+                      height={28}
+                      className="w-14 h-14 rounded-lg"
+                    />
+                  </div>
                   <div className="flex flex-col justify-between gap-1">
                     <div className="font-bold text-gray-700">
                       {product.name}

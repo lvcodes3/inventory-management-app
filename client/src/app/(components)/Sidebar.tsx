@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
   Archive,
@@ -40,7 +41,15 @@ export const Sidebar = () => {
           isSidebarCollapsed ? "px-5" : "px-8"
         } flex justify-between md:justify-normal items-center gap-3`}
       >
-        <div>logo</div>
+        <div>
+          <Image
+            src="https://s3-inventory-management-app.s3.us-west-1.amazonaws.com/logo.png"
+            alt="Logo"
+            width={27}
+            height={27}
+            className="w-8 rounded"
+          />
+        </div>
         <h1
           className={`${
             isSidebarCollapsed ? "hidden" : "block"

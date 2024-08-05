@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Bell, MenuIcon, Moon, Settings, Sun } from "lucide-react";
 
 import { useAppDispatch, useAppSelector } from "@/app/redux";
@@ -70,7 +71,15 @@ export const Navbar = () => {
           <hr className="w-0 h-7 mx-3 border border-solid border-l border-gray-300" />
 
           <div className="flex items-center gap-3 cursor-pointer">
-            <div className="w-9 h-9">image</div>
+            <div className="w-9 h-9">
+              <Image
+                src="https://s3-inventory-management-app.s3.us-west-1.amazonaws.com/profile.jpg"
+                alt="profile"
+                width={50}
+                height={50}
+                className="h-full object-cover rounded-full"
+              />
+            </div>
             <span className="font-semibold">LV</span>
           </div>
         </div>
